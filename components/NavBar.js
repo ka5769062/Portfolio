@@ -1,11 +1,23 @@
-import React from "react";
+'use client'
 import Link from "next/link";
 import Image from "next/image";
 import { NAV_LINKS } from "@/constants";
+import * as React from 'react';
+import Box from '@mui/joy/Box';
+import IconButton from '@mui/joy/IconButton';
+import Drawer from '@mui/joy/Drawer';
+import Input from '@mui/joy/Input';
+import List from '@mui/joy/List';
+import ListItemButton from '@mui/joy/ListItemButton';
+import ModalClose from '@mui/joy/ModalClose';
+import Menu from '@mui/icons-material/Menu';
+
+
+
 
 const NavBar = () => {
   return (
-    <nav className="padding-container relative z-30 rounded-lg bg-white shadow-xl ring-1 ring-slate-100 py-4">
+    <nav className="top-0 sticky padding-container relative z-30 rounded-lg bg-white shadow-xl ring-1 ring-slate-100 py-4">
       <div className="flexBetween max-container ">
         <Link href="/" className="bold-28 capitalize relative ">
           Kam<span className="text-blue-700">ran</span>
@@ -25,15 +37,75 @@ const NavBar = () => {
             );
           })}
         </ul>
-        <Image
+        {/* <Image
         src="menu.svg"
         width={28}
         height={28}
         className="inline-block cursor-pointer lg:hidden"
-        />
+        /> */}
+
+        <div className="inline-block cursor-pointer lg:hidden">
+        <DrawerMobileNavigation  />
+        </div>
       </div>
     </nav>
   );
 };
+
+
+function DrawerMobileNavigation() {
+  const [open, setOpen] = React.useState(false);
+
+  return (
+    <React.Fragment>
+      <IconButton variant="outlined" color="neutral" onClick={() => setOpen(true)}>
+        <Menu />
+      </IconButton>
+      <Drawer open={open} onClose={() => setOpen(false)} anchor="right">
+        <Box
+          sx={{
+            display: 'flex',
+            alignItems: 'center',
+            gap: 0.5,
+            ml: 'auto',
+            mt: 1,
+            mr: 2,
+          }}
+        >
+          
+          <ModalClose id="close-icon" sx={{ position: 'initial' }} />
+        </Box>
+       <List
+          size="lg"
+          component="nav"
+          sx={{
+            flex: 'none',
+            fontSize: 'xl',
+            '& > div': { justifyContent: 'center' },
+          }}
+        >
+          <ListItemButton sx={{ fontWeight: 'lg' }}>Home</ListItemButton>
+          <ListItemButton>About</ListItemButton>
+          <ListItemButton>Skills</ListItemButton>
+          <ListItemButton>Portfolio</ListItemButton>
+          <ListItemButton>Testimonial</ListItemButton>
+          <ListItemButton>Contact</ListItemButton>
+        </List>
+      </Drawer>
+    </React.Fragment>
+  );
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 export default NavBar;

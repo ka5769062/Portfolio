@@ -3,8 +3,21 @@ import React from "react";
 import { Typewriter } from "react-simple-typewriter";
 import Button from "./Button";
 import Image from "next/image";
+import { jsPDF } from "jspdf";
+
+const PDF_FILE_URL = "http://localhost:3000/kamran-resume.pdf";
 
 const Hero = () => {
+  function handleClick (url){
+    const fileName = url.split("/").pop();
+    const aTag = document.createElement("a");
+    aTag.href = url;
+    aTag.setAttribute("download", fileName);
+    document.body.appendChild(aTag);
+    aTag.click();
+    aTag.remove();
+  }
+
   return (
     <section
       className="max-container padding-container flex flex-col 
@@ -34,46 +47,50 @@ const Hero = () => {
         <p className="regular-16 max-w-[555px] my-4">
           dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
           incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-          .lit esse cillum dolore
+          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea .lit
+          esse cillum dolore
         </p>
-        <div className="my-5 flex flex-wrap gap-5 "> 
+        <div className="my-5 flex flex-wrap gap-5 ">
           <div className="flex items-center gap-2 ">
-        {
-           Array(5).fill(1).map((index)=>(
-            <img
-            src="/star.svg"
-            width={24}
-            height={24}
-            />
-           ))
-           }
+            {Array(5)
+              .fill(1)
+              .map((index) => (
+                <img src="/star.svg" width={24} height={24} />
+              ))}
           </div>
-          <p className="bold-18 lg:bold-20">1100+<span className="regular-16 lg:regular-20">Excellent Reviews</span></p>
+          <p className="bold-18 lg:bold-20">
+            1100+
+            <span className="regular-16 lg:regular-20">Excellent Reviews</span>
+          </p>
         </div>
         <div className="flexStart gap-1 pt-6 ">
-          <Button 
-          type="button"
-          title="Download CV "
-          icon="/download.svg"
-          variant="btn_dark_rounded"
+          <Button
+            onClick={handleClick(PDF_FILE_URL)}
+            type="button"
+            title="Download CV "
+            icon="/download.svg"
+            variant="btn_dark_rounded"
           />
-          <Button 
-          type="button"
-          title="Contact me"
-          icon="/arrow-right.svg"
-          variant="btn_white_rounded"
+          <Button
+            type="button"
+            title="Contact me"
+            icon="/arrow-right.svg"
+            variant="btn_white_rounded"
           />
         </div>
       </div>
-    
-    {/* {RIGHT side} */}
-    
-     <div className="flex flex-1 xl:flexEnd">
-      <Image src='/u1.png' alt='bg' width='488' height='488' className='w-auto'/>
-     </div>
 
-    
+      {/* {RIGHT side} */}
+
+      <div className="flex flex-1 xl:flexEnd">
+        <Image
+          src="/u1.png"
+          alt="bg"
+          width="488"
+          height="488"
+          className="w-auto"
+        />
+      </div>
     </section>
   );
 };

@@ -49,7 +49,7 @@ const Footer = () => {
         </ul>
       </div>
       <hr className="border-none outline-none h-[0.01rem] bg-gray-20 my-8 "/>
-      <div className="text-center">this made by kamran ali</div>
+      <div className="text-center">this made by kamran ali @2024</div>
     </footer>
   );
 };

@@ -1,8 +1,8 @@
 // NAVIGATION
 export const NAV_LINKS = [
     { href: '/', key: 'home', label: 'Home' },
-    { href: '/', key: 'about', label: 'About' },
-    { href: '/', key: 'skills', label: 'Skills' },
+    { href: "/About", key: 'about', label: 'About' },
+    { href: '/', key: 'skills', label: 'Skills'},
     { href: '/', key: 'portfolio ', label: 'Portfolio' },
     { href: '/', key: 'testimonial', label: 'Testimonial' },
     { href: '/', key: 'contact_us', label: 'Contact' },
