@@ -4,20 +4,11 @@ import { Typewriter } from "react-simple-typewriter";
 import Button from "./Button";
 import Image from "next/image";
 import { jsPDF } from "jspdf";
+import Link from "next/link";
 
-const PDF_FILE_URL = "http://localhost:3000/kamran-resume.pdf";
 
 const Hero = () => {
-  function handleClick (url){
-    const fileName = url.split("/").pop();
-    const aTag = document.createElement("a");
-    aTag.href = url;
-    aTag.setAttribute("download", fileName);
-    document.body.appendChild(aTag);
-    aTag.click();
-    aTag.remove();
-  }
-
+  
   return (
     <section
       className="max-container padding-container flex flex-col 
@@ -64,13 +55,17 @@ const Hero = () => {
           </p>
         </div>
         <div className="flexStart gap-1 pt-6 ">
-          <Button
-            onClick={handleClick(PDF_FILE_URL)}
-            type="button"
-            title="Download CV "
-            icon="/download.svg"
-            variant="btn_dark_rounded"
-          />
+          <Link
+            href="https://drive.google.com/file/d/1GAtPnHfBesknA1gp640KFYQ-9Te42JRr/view?usp=sharing"
+            target="_blank"
+          >
+            <Button
+              type="button"
+              title="Download CV "
+              icon="/download.svg"
+              variant="btn_dark_rounded"
+            />
+          </Link>
           <Button
             type="button"
             title="Contact me"

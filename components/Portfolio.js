@@ -39,8 +39,8 @@ export const PortItem = ({ title, imgURL, description }) => {
         <div className="flex gap-1">
         <Button 
           type="button"
-          title="Download CV "
-          icon="/download.svg"
+          title="Read More"
+          icon="/more.svg"
           variant="btn_dark_rounded"
           />
 

@@ -1,23 +1,21 @@
-'use client'
+"use client";
 import Link from "next/link";
 import Image from "next/image";
 import { NAV_LINKS } from "@/constants";
-import * as React from 'react';
-import Box from '@mui/joy/Box';
-import IconButton from '@mui/joy/IconButton';
-import Drawer from '@mui/joy/Drawer';
-import Input from '@mui/joy/Input';
-import List from '@mui/joy/List';
-import ListItemButton from '@mui/joy/ListItemButton';
-import ModalClose from '@mui/joy/ModalClose';
-import Menu from '@mui/icons-material/Menu';
-
-
-
+import * as React from "react";
+import Box from "@mui/joy/Box";
+import IconButton from "@mui/joy/IconButton";
+import Drawer from "@mui/joy/Drawer";
+import Input from "@mui/joy/Input";
+import List from "@mui/joy/List";
+import ListItemButton from "@mui/joy/ListItemButton";
+import ModalClose from "@mui/joy/ModalClose";
+import Menu from "@mui/icons-material/Menu";
+import Button from "./Button";
 
 const NavBar = () => {
   return (
-    <nav className="top-0 sticky padding-container relative z-30 rounded-lg bg-white shadow-xl ring-1 ring-slate-100 py-4">
+    <nav className=" padding-container relative z-30 rounded-lg bg-white shadow-xl ring-1 ring-slate-100 py-4">
       <div className="flexBetween max-container ">
         <Link href="/" className="bold-28 capitalize relative ">
           Kam<span className="text-blue-700">ran</span>
@@ -36,6 +34,13 @@ const NavBar = () => {
               </Link>
             );
           })}
+           <Link href="https://github.com/ka5769062?tab=repositories" target="_Blank">
+          <Button
+            type="button"
+            title="Github Profile"
+            variant="btn_dark_rounded"
+          />
+          </Link>
         </ul>
         {/* <Image
         src="menu.svg"
@@ -45,46 +50,48 @@ const NavBar = () => {
         /> */}
 
         <div className="inline-block cursor-pointer lg:hidden">
-        <DrawerMobileNavigation  />
+          <DrawerMobileNavigation />
         </div>
       </div>
     </nav>
   );
 };
 
-
 function DrawerMobileNavigation() {
   const [open, setOpen] = React.useState(false);
 
   return (
     <React.Fragment>
-      <IconButton variant="outlined" color="neutral" onClick={() => setOpen(true)}>
+      <IconButton
+        variant="outlined"
+        color="neutral"
+        onClick={() => setOpen(true)}
+      >
         <Menu />
       </IconButton>
       <Drawer open={open} onClose={() => setOpen(false)} anchor="right">
         <Box
           sx={{
-            display: 'flex',
-            alignItems: 'center',
+            display: "flex",
+            alignItems: "center",
             gap: 0.5,
-            ml: 'auto',
+            ml: "auto",
             mt: 1,
             mr: 2,
           }}
         >
-          
-          <ModalClose id="close-icon" sx={{ position: 'initial' }} />
+          <ModalClose id="close-icon" sx={{ position: "initial" }} />
         </Box>
-       <List
+        <List
           size="lg"
           component="nav"
           sx={{
-            flex: 'none',
-            fontSize: 'xl',
-            '& > div': { justifyContent: 'center' },
+            flex: "none",
+            fontSize: "xl",
+            "& > div": { justifyContent: "center" },
           }}
         >
-          <ListItemButton sx={{ fontWeight: 'lg' }}>Home</ListItemButton>
+          <ListItemButton sx={{ fontWeight: "lg" }}>Home</ListItemButton>
           <ListItemButton>About</ListItemButton>
           <ListItemButton>Skills</ListItemButton>
           <ListItemButton>Portfolio</ListItemButton>
@@ -95,17 +102,5 @@ function DrawerMobileNavigation() {
     </React.Fragment>
   );
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 export default NavBar;

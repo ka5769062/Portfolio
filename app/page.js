@@ -1,9 +1,9 @@
 import React from "react";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
-import Skills from "@/components/Skills";
 import Portfolio from "@/components/Portfolio";
-import Testimonial from "@/components/Testimonial";
+import Service from "@/components/Service";
+import Skill from "@/components/Skill";
 
 const HomePage = () => {
   return (
@@ -11,9 +11,9 @@ const HomePage = () => {
       <>
         <Hero />
         <About />
-        <Skills />
+        <Skill />
+        <Service />
         <Portfolio />
-        <Testimonial />
       </>
     </main>
   );
