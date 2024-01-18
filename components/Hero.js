@@ -3,7 +3,6 @@ import React from "react";
 import { Typewriter } from "react-simple-typewriter";
 import Button from "./Button";
 import Image from "next/image";
-import { jsPDF } from "jspdf";
 import Link from "next/link";
 
 
@@ -25,7 +24,7 @@ const Hero = () => {
           A{" "}
           <span>
             <Typewriter
-              words={["FrontEnd Developer", "Programmer", "Coder"]}
+              words={["FrontEnd Dev", "Programmer", "Coder"]}
               loop={true}
               cursor
               cursorStyle="_"
