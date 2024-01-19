@@ -11,7 +11,7 @@ const Footer = () => {
       className="max-container padding-container bg-green-90 bg-pattern bg-cover bg-center
     bg-no-repeat px-6 pt-24 pb-8 text-white "
     >
-      <div className="flex flexBetween flex-col gap-14 md:flex-row pb-16 ">
+      <div className="flex justify-center flex-col gap-14 md:flex-row pb-16 ">
         <ul>
           {FOOTER_LINKS.map((link) => {
             return (
@@ -26,6 +26,8 @@ const Footer = () => {
             );
           })}
         </ul>
+        </div>
+        <div className="flex justify-center flex-col gap-14 md:flex-row pb-16 ">
         <ul className="regular flex gap-4 text-gray-30 ">
           {SOCIALS.map((social) => {
             return (
@@ -47,7 +49,7 @@ const Footer = () => {
             );
           })}
         </ul>
-      </div>
+     </div>
       <hr className="border-none outline-none h-[0.01rem] bg-gray-20 my-8 "/>
       <div className="text-center">© 2024 Kamran Ali. All rights reserved.</div>
     </footer>

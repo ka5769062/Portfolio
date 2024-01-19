@@ -12,6 +12,8 @@ import ListItemButton from "@mui/joy/ListItemButton";
 import ModalClose from "@mui/joy/ModalClose";
 import Menu from "@mui/icons-material/Menu";
 import Button from "./Button";
+import { Link as ScrollLink, animateScroll } from 'react-scroll';
+
 
 const NavBar = () => {
   return (
@@ -56,9 +58,21 @@ const NavBar = () => {
     </nav>
   );
 };
-
 function DrawerMobileNavigation() {
   const [open, setOpen] = React.useState(false);
+
+  const handleItemClick = (section) => {
+    setOpen(false);
+
+    // Use plain JavaScript for smooth scrolling
+    const targetElement = document.getElementById(section);
+    if (targetElement) {
+      window.scrollTo({
+        top: targetElement.offsetTop,
+        behavior: 'smooth',
+      });
+    }
+  };
 
   return (
     <React.Fragment>
@@ -80,6 +94,8 @@ function DrawerMobileNavigation() {
             mr: 2,
           }}
         >
+          {/* Replace with the actual import */}
+          {/* <ModalClose id="close-icon" sx={{ position: "initial" }} /> */}
           <ModalClose id="close-icon" sx={{ position: "initial" }} />
         </Box>
         <List
@@ -91,16 +107,24 @@ function DrawerMobileNavigation() {
             "& > div": { justifyContent: "center" },
           }}
         >
-          <ListItemButton sx={{ fontWeight: "lg" }}>Home</ListItemButton>
-          <ListItemButton>About</ListItemButton>
-          <ListItemButton>Skills</ListItemButton>
-          <ListItemButton>Portfolio</ListItemButton>
-          <ListItemButton>Testimonial</ListItemButton>
-          <ListItemButton>Contact</ListItemButton>
+          <ListItemButton sx={{ fontWeight: "lg" }}>
+            <div onClick={() => handleItemClick('/')}>Home</div>
+          </ListItemButton>
+          <ListItemButton>
+            <div onClick={() => handleItemClick('About')}>About</div>
+          </ListItemButton>
+          <ListItemButton>
+            <div onClick={() => handleItemClick('Skills')}>Skills</div>
+          </ListItemButton>
+          <ListItemButton>
+            <div onClick={() => handleItemClick('Portfolio')}>Portfolio</div>
+          </ListItemButton>
+          <ListItemButton>
+            <div onClick={() => handleItemClick('Contact')}>Contact</div>
+          </ListItemButton>
         </List>
       </Drawer>
     </React.Fragment>
   );
 }
-
 export default NavBar;

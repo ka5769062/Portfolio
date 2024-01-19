@@ -1,10 +1,40 @@
 import React from "react";
 import Image from "next/image";
 import { Android, Backend, Frontend, Others } from "@/constants";
+// import styled from "@emotion/styled";
+
+// const SkillItem = styled.div`
+//   font-size: 16px;
+//   font-weight: 400;
+//   // color: ${({ theme }) => theme.text_primary + 80};
+//   // border: 1px solid ${({ theme }) => theme.text_primary + 80};
+//   border-radius: 12px;
+//   padding: 12px 16px;
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+//   gap: 8px;
+//   @media (max-width: 768px) {
+//     font-size: 14px;
+//     padding: 8px 12px;
+//   }
+//   @media (max-width: 500px) {
+//     font-size: 14px;
+//     padding: 6px 12px;
+//   }
+// `
+
+
+
+
+
+
+
+
 
 const Skill = () => {
   return (
-    <section className="max-container padding-container gap-20 py-10 pb-32 md:gap-28 lg:py-20 ">
+    <section id="Skills" className="max-container padding-container gap-20 py-10 pb-32 md:gap-28 lg:py-20 ">
       <div className="text-center bold-18 uppercase tracking-[1rem] text-blue-500 pb-20">
         Skills
       </div>
@@ -17,12 +47,12 @@ const Skill = () => {
         </div>
      
 
-        <div className="flex flex-col md:flex-row justify-center items-center space-y-8 md:space-y-0 md:space-x-8">
-  <div className="border-2 rounded-lg w-full md:w-[450px] h-[400px] shadow-lg">
+      <div className="flex flex-col md:flex-row justify-center items-center space-y-8 md:space-y-0 md:space-x-8">
+  <div className="border-2 rounded-lg w-full md:w-[450px] h-[400px]  shadow-lg">
     <div className="flex justify-center items-center font-semibold text-xl md:text-3xl p-4">
       Frontend
     </div>
-    <div className="flex justify-center flex-wrap gap-2 p-4">
+    <div className="flex justify-center flex-wrap gap-2 p-4 ">
       {Frontend.map((data) => (
         <OurSkills key={data.name} name={data.name} image={data.image} />
       ))}
@@ -33,7 +63,7 @@ const Skill = () => {
     <div className="flex justify-center items-center font-semibold text-xl md:text-3xl p-4">
       Backend
     </div>
-    <div className="flex justify-center flex-wrap gap-2 p-4">
+    <div class="SkillItem" className="flex justify-center flex-wrap gap-2 p-4">
       {Backend.map((data) => (
         <OurSkills key={data.name} name={data.name} image={data.image} />
       ))}
@@ -41,7 +71,9 @@ const Skill = () => {
   </div>
 </div>
 
-<div className="flex flex-col md:flex-row justify-center items-center mt-8 md:space-x-8">
+
+
+ <div className="flex flex-col md:flex-row justify-center items-center mt-8 md:space-x-8">
   <div className="border-2 rounded-lg w-full md:w-[450px] h-[400px] shadow-lg">
     <div className="flex justify-center items-center font-semibold text-xl md:text-3xl p-4">
       Android
@@ -63,8 +95,7 @@ const Skill = () => {
       ))}
     </div>
   </div>
-</div>
-
+</div> 
 
       </div>
     </section>
@@ -74,9 +105,9 @@ const Skill = () => {
 
 function OurSkills({ image, name }) {
   return (
-    <li className="flex items-center w-36 h-15 border-2 rounded-lg p-2 mb-4">
+    <li className="flex items-center w-[35%] h-15 border-2 rounded-lg p-2 mb-4 ">
       <img src={image} width={20} height={20} alt={`${name} logo`} className="mb-2" />
-      <div className="text-center " >{name}</div>
+      <div className="text-center">{name}</div>
     </li>
   );
 }
