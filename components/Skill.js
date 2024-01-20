@@ -107,7 +107,7 @@ function OurSkills({ image, name }) {
   return (
     <li className="flex items-center w-[35%] h-15 border-2 rounded-lg p-2 mb-4 ">
       <img src={image} width={20} height={20} alt={`${name} logo`} className="mb-2" />
-      <div className="text-center">{name}</div>
+      <div className="text-center text-[80%]">{name}</div>
     </li>
   );
 }
