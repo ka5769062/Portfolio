@@ -77,19 +77,19 @@ const Hero = () => {
       {/* {RIGHT side} */}
 
       <div className="relative flex flex-1 xl:flexEnd">
-       <div className="absolute top-5 left-[85px]">
+       <div className="absolute top-5 left-[10%]">
          <img src="/javascript.png" width={45} height={45}/>
        </div>
-       <div className="absolute top-[150px] left-[20px]">
+       <div className="absolute top-[50%] left-[7%]">
         <img src="/react.png" width={45} height={45}/>
        </div>
-       <div className="absolute top-[250px] right-5">
+       <div className="absolute top-[70%] right-[7%]">
         <img src="/mongo-db.png" width={45} height={45}/>
        </div>
        <div className="absolute top-5 right-10">
         <img src="/nodejs.png" width={45} height={45}/>
        </div>
-       <div className="absolute top-[90%] left-20">
+       <div className="absolute top-[90%] left-[8%]">
         <img src="/github.png" width={45} height={45}/>
        </div>
 
