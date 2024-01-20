@@ -18,6 +18,8 @@ body {
 }
 
 @layer utilities {
+
+  
   .btn_white_rounded  { 
     @apply  border-white bg-white px-6 py-3 text-gray-90 hover:bg-transparent
   }

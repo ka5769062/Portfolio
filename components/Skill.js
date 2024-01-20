@@ -1,34 +1,6 @@
 import React from "react";
 import Image from "next/image";
 import { Android, Backend, Frontend, Others } from "@/constants";
-// import styled from "@emotion/styled";
-
-// const SkillItem = styled.div`
-//   font-size: 16px;
-//   font-weight: 400;
-//   // color: ${({ theme }) => theme.text_primary + 80};
-//   // border: 1px solid ${({ theme }) => theme.text_primary + 80};
-//   border-radius: 12px;
-//   padding: 12px 16px;
-//   display: flex;
-//   align-items: center;
-//   justify-content: center;
-//   gap: 8px;
-//   @media (max-width: 768px) {
-//     font-size: 14px;
-//     padding: 8px 12px;
-//   }
-//   @media (max-width: 500px) {
-//     font-size: 14px;
-//     padding: 6px 12px;
-//   }
-// `
-
-
-
-
-
-
 
 
 
@@ -48,7 +20,7 @@ const Skill = () => {
      
 
       <div className="flex flex-col md:flex-row justify-center items-center space-y-8 md:space-y-0 md:space-x-8">
-  <div className="border-2 rounded-lg w-full md:w-[450px] h-[400px]  shadow-lg">
+  <div className="border-2 rounded-lg w-full md:w-[450px] h-[400px] shadow-lg">
     <div className="flex justify-center items-center font-semibold text-xl md:text-3xl p-4">
       Frontend
     </div>
@@ -63,7 +35,7 @@ const Skill = () => {
     <div className="flex justify-center items-center font-semibold text-xl md:text-3xl p-4">
       Backend
     </div>
-    <div class="SkillItem" className="flex justify-center flex-wrap gap-2 p-4">
+    <div className="flex justify-center flex-wrap gap-2 p-4">
       {Backend.map((data) => (
         <OurSkills key={data.name} name={data.name} image={data.image} />
       ))}

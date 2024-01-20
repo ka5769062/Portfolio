@@ -4,11 +4,16 @@ import { Typewriter } from "react-simple-typewriter";
 import Button from "./Button";
 import Image from "next/image";
 import Link from "next/link";
+import { useSpring, animated } from '@react-spring/web'
+
 
 
 const Hero = () => {
   
+
+
   return (
+  
     <section
       className="max-container padding-container flex flex-col 
     flexCenter gap-20 py-10 pb-32 md:gap-28 lg:py-20 lg:flex-row"
@@ -76,7 +81,7 @@ const Hero = () => {
 
       {/* {RIGHT side} */}
 
-      <div className="relative flex flex-1 xl:flexEnd">
+      <div className="hero relative flex flex-1 xl:flexEnd">
        <div className="absolute top-5 left-[10%]">
          <img src="/javascript.png" width={45} height={45}/>
        </div>
@@ -93,16 +98,15 @@ const Hero = () => {
         <img src="/github.png" width={45} height={45}/>
        </div>
 
-
-
+     
         <Image
           src="/u1.png"
           alt="bg"
           width="488"
           height="488"
           className="w-auto"
-        />
-      </div>
+        />        
+        </div>
     </section>
   );
 };

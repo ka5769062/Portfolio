@@ -9,9 +9,10 @@ const Footer = () => {
   return (
     <footer
       className="max-container padding-container bg-green-90 bg-pattern bg-cover bg-center
-    bg-no-repeat px-6 pt-24 pb-8 text-white "
-    >
-      <div className="flex justify-center flex-col gap-14 md:flex-row pb-16 ">
+      bg-no-repeat px-6 pt-20 pb-8 text-white "
+      >
+      <h1 className="flex justify-center text-blue-500 text-2xl font-semibold">KAMRAN ALI</h1>
+      <div className="flex justify-center flex-col gap-14 md:flex-row pb-16 mt-10">
         <ul>
           {FOOTER_LINKS.map((link) => {
             return (
